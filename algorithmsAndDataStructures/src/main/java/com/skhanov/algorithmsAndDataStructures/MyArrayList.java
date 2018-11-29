@@ -9,15 +9,15 @@ public class MyArrayList<E> {
 	
 	public MyArrayList() {
 		this.list = new Object[INITIAL_CAPACITY];
-		this.size = 1;
+		this.size = 0;
 	}
 	
 	public MyArrayList(int size) {
 		this.list = new Object[size];
 		this.size = size;
 		
-	}
-	
+	}		
+
 	@SuppressWarnings("unchecked")
 	protected E castE(Object o) {
 		return (E) o;
@@ -28,8 +28,9 @@ public class MyArrayList<E> {
 	}
 	
 	public void add(E e) {
-		ensureCapacity(++size);
-		list[size] = e;
+		ensureCapacity(size);
+		list[size++] = e;
+		
 	}
 
 	private void ensureCapacity(int size) {
@@ -81,7 +82,11 @@ public class MyArrayList<E> {
     public String toString() {
     	String result = "";
     	for (int i = 0; i < size; i++) {
-			result += list[i] + ", ";
+    		if(i == size -1) {
+    			result += list[i];
+    		} else {
+    			result += list[i] + ", ";
+			}
 		}
     	return result;
     }

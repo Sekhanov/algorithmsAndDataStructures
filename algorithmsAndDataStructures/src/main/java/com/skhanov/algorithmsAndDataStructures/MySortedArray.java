@@ -4,9 +4,22 @@ public class MySortedArray<E extends Comparable<E>> extends MyArrayList<E> {
 	
 	public void selectitioSort() {
 		for (int i = 0; i < size - 1; i++) {
-			for (int j = i; j > 0; j--) {
+			int min = i;
+			for(int j = i + 1; j < size; j++) {
 				if(castE(list[i]).compareTo(castE(list[j])) > 0) {
-					exchange(i, j);
+					exchange(min, j);
+				}
+			}
+		}
+	}
+	
+	public void insertionSort() {
+		for(int i = 0; i < size; i++) {
+			for(int j = i; j > 0; j--) {
+				if(castE(list[j]).compareTo(castE(list[j - 1])) < 0) {
+					exchange(j, j - 1);
+				} else {
+					break;
 				}
 			}
 		}
@@ -18,6 +31,8 @@ public class MySortedArray<E extends Comparable<E>> extends MyArrayList<E> {
 		list[j] = temp;
 		
 	}
+	
+	
 
 
 }
