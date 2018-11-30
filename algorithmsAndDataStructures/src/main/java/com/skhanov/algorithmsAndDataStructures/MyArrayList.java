@@ -68,15 +68,25 @@ public class MyArrayList<E> {
 		return result;		
 	}
 	
-    public boolean find(E element) {
-    	boolean result = false;
+    public int find(E e) {
+    	int result = 0;
         for (int i = 0; i < size; i++) {
-            if (list[i].equals(element)) {
-                result =  true;
+            if (list[i].equals(e)) {
+                result =  i;
             }
         }
         return result;
     }
+    
+/*    public boolean find(E e) {
+    	boolean result = false;
+    	for (int i = 0; i < size; i++) {
+    		if (list[i].equals(e)) {
+    			result =  true;
+    		}
+    	}
+    	return result;
+    }*/
     
     @Override
     public String toString() {

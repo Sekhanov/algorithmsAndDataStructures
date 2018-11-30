@@ -31,6 +31,36 @@ public class MySortedArray<E extends Comparable<E>> extends MyArrayList<E> {
 		list[j] = temp;
 		
 	}
+
+	@Override
+	public void add(E e) {		
+		super.add(e);
+		int i = this.size() - 1;
+		while(i > 0 && get(i).compareTo(get(i - 1)) < 0) {
+			exchange(i, i - 1);
+			i--;
+		}
+		
+	}
+	
+	
+	
+	@Override
+	public int find(E e) {		
+		int low = 0;
+		int high = size - 1;
+		while(low <= high) {
+			int mid = low + (high -  low) / 2;
+			if(e.compareTo(castE(list[mid])) > 0) {
+				low = mid + 1;
+			} else if(e.compareTo(castE(list[mid])) < 0) {
+				high = mid - 1;
+			} else {
+				return mid;
+			}			
+		}
+		return 0;
+	}
 	
 	
 
