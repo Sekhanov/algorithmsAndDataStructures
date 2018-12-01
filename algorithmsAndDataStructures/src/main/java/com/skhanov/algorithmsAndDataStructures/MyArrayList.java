@@ -28,12 +28,12 @@ public class MyArrayList<E> {
 	}
 	
 	public void add(E e) {
-		ensureCapacity(size);
+		ensureCapacity();
 		list[size++] = e;
 		
 	}
 
-	private void ensureCapacity(int size) {
+	private void ensureCapacity() {
 		if(size == list.length) {
 			resize(2 * list.length);
 		}
@@ -64,7 +64,7 @@ public class MyArrayList<E> {
 				size--;
 			}
 		}
-		ensureCapacity(size);
+		ensureCapacity();
 		return result;		
 	}
 	
@@ -77,17 +77,7 @@ public class MyArrayList<E> {
         }
         return result;
     }
-    
-/*    public boolean find(E e) {
-    	boolean result = false;
-    	for (int i = 0; i < size; i++) {
-    		if (list[i].equals(e)) {
-    			result =  true;
-    		}
-    	}
-    	return result;
-    }*/
-    
+        
     @Override
     public String toString() {
     	String result = "";
