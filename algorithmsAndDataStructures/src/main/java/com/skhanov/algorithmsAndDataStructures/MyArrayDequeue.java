@@ -1,7 +1,5 @@
 package com.skhanov.algorithmsAndDataStructures;
 
-import java.util.logging.Level;
-
 public class MyArrayDequeue<E> {
 
 	private static final int INITIAL_CAPACITY = 10;

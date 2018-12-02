@@ -20,15 +20,6 @@ public class MyArrayStack<E> {
 		stack = new Object[size * 2];		
 	}
 	
-//	private void ensureCapacity() {
-//		if(size == stack.length) {
-//			resize(stack.length * 2);			
-//		}
-//		if(top == stack.length / 4) {
-//			resize(stack.length / 2);
-//		}
-//	}
-	
 	private void resize(int capacity) {
 		Object[] temp = new Object[capacity];
 		for(int i = 0; i < size; i++) {
