@@ -1,7 +1,5 @@
 package com.skhanov.algorithmsAndDataStructures;
 
-import java.util.Queue;
-
 public class MainClass {
 	
 	public static void main(String[] args) {
@@ -11,19 +9,19 @@ public class MainClass {
 	}
 	
 	private static void lesson3HW() {
-//			MyArrayStack<Integer> arrStack = new MyArrayStack<>();
-//			arrStack.push(5);
-//			arrStack.push(4);
-//			arrStack.push(12);
-//			System.out.println(arrStack);
-//			System.out.println(arrStack.peek());
-//			arrStack.pop();
-//			arrStack.pop();
-//			System.out.println(arrStack);;
-//			arrStack.pop();
-//			arrStack.pop();
-//			
-//			System.out.println(Utils.checkBrackets("[(2 + 2){}]"));
+			MyArrayStack<Integer> arrStack = new MyArrayStack<>();
+			arrStack.push(5);
+			arrStack.push(4);
+			arrStack.push(12);
+			System.out.println("arrStack: " + arrStack);
+			System.out.println(arrStack.peek());
+			arrStack.pop();
+			arrStack.pop();
+			System.out.println("arrStack: " + arrStack);;	
+			
+			System.out.println("checkBrackets1 "  + Utils.checkBrackets("[(2 + 2){}]"));
+			System.out.println("checkBrackets2 "  + Utils.checkBrackets("[(2 + 2){()}]"));
+			System.out.println("checkBrackets3 "  + Utils.checkBrackets("[(2 + 2){]"));
 		
 			MyArrayQueue<Integer> myArrayQueue = new MyArrayQueue<>();
 			myArrayQueue.insert(1);
@@ -39,8 +37,41 @@ public class MainClass {
 			myArrayQueue.insert(6);
 			myArrayQueue.insert(6);
 			myArrayQueue.insert(6);
-			System.out.println(myArrayQueue);
-
+			System.out.println("myArrayQueue " + myArrayQueue);
+		
+		System.out.println("String revers with stack - " + Utils.stringReverse("1234567890abcdefg"));
+		
+		MyArrayDequeue<Integer> intDeq = new MyArrayDequeue<>();
+		intDeq.insertRight(444);
+		intDeq.insertRight(333);
+		intDeq.insertLeft(1);
+		intDeq.insertLeft(2);
+		intDeq.insertLeft(3);
+		intDeq.insertLeft(4);
+		intDeq.insertLeft(5);
+		intDeq.insertLeft(6);
+		intDeq.insertLeft(7);
+		intDeq.insertLeft(8);
+		intDeq.insertLeft(9);
+		intDeq.insertLeft(10);
+		intDeq.insertRight(555);
+		intDeq.insertRight(555);
+		intDeq.insertRight(555);
+		System.out.println("intDeq: "  + intDeq);
+		intDeq.removeLeft();
+		intDeq.removeRight();
+		intDeq.removeRight();
+		intDeq.removeLeft();
+		intDeq.removeLeft();
+		intDeq.removeLeft();
+		intDeq.removeRight();
+		intDeq.removeRight();
+		intDeq.removeRight();
+		intDeq.removeRight();
+		intDeq.removeRight();
+		intDeq.removeRight();
+		System.out.println("intDeq: "  + intDeq);
+		
 		}
 
 	private static void lesson2HW() {	

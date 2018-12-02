@@ -26,5 +26,21 @@ public class Utils {
 		}
 		return stack.isEmpty();
 	}
+	
+	public static String stringReverse(String s) {
+		char[] chArr = s.toCharArray();
+		StringBuilder stringBuilder = new StringBuilder();
+		MyArrayStack<Character> chStack = new MyArrayStack<>();
+		for (char c : chArr) {
+			chStack.push(c);
+		}
+		int charCount = chStack.size();
+		for (int i = 0; i < charCount; i++) {
+			stringBuilder.append(chStack.pop());				
+		}
+		
+		return stringBuilder.toString();
+		
+	}
 
 }

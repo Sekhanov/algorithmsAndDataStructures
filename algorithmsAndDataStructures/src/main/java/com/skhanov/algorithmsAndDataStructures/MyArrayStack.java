@@ -11,8 +11,8 @@ public class MyArrayStack<E> {
 	private int top = -1;
 	
 	public MyArrayStack() {
-		size = INITIAL_CAPACITY;
-		stack = new Object[INITIAL_CAPACITY * 2];		
+		size = 0;
+		stack = new Object[INITIAL_CAPACITY];		
 	}
 	
 	public MyArrayStack(int size) {
@@ -20,18 +20,18 @@ public class MyArrayStack<E> {
 		stack = new Object[size * 2];		
 	}
 	
-	private void ensureCapacity() {
-		if(size == stack.length) {
-			resize(stack.length * 2);			
-		}
-		if(top == stack.length / 4) {
-			resize(stack.length / 2);
-		}
-	}
+//	private void ensureCapacity() {
+//		if(size == stack.length) {
+//			resize(stack.length * 2);			
+//		}
+//		if(top == stack.length / 4) {
+//			resize(stack.length / 2);
+//		}
+//	}
 	
 	private void resize(int capacity) {
 		Object[] temp = new Object[capacity];
-		for(int i = 0; i < top; i++) {
+		for(int i = 0; i < size; i++) {
 			temp[i] = stack[i];
 		}
 		stack = temp;		
@@ -43,7 +43,9 @@ public class MyArrayStack<E> {
 	}
 	
 	public void push(E e) {
-		ensureCapacity();
+		if(size == stack.length) {
+			resize(stack.length * 2);			
+		}
 		stack[++top] = e;
 		size++;
 	}
@@ -55,7 +57,9 @@ public class MyArrayStack<E> {
 		E result = castE(stack[top--]);
 		stack[top + 1] = null;
 		size--;
-		ensureCapacity();		
+		if(top == stack.length / 4) {
+		resize(stack.length / 2);
+	}		
 		return result;		
 	}
 	
@@ -76,6 +80,10 @@ public class MyArrayStack<E> {
 			}
 		}
 		return s;
+	}
+	
+	public int size() {
+		return size;
 	}
 	
 }
