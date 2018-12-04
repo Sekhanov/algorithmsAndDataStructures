@@ -5,9 +5,23 @@ public class MainClass {
 	public static void main(String[] args) {
 
 //		lesson2HW();	
-		lesson3HW();
+//		lesson3HW();
+		lesson4HW();
 	}
 	
+	private static void lesson4HW() {
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+		myLinkedList.insert(1);
+		myLinkedList.insert(2);
+		myLinkedList.insert(3);
+		myLinkedList.insert(4);
+		myLinkedList.insert(5);
+		System.out.println(myLinkedList);
+		myLinkedList.delete(4);
+		myLinkedList.delete(5);
+		System.out.println(myLinkedList);
+	}
+
 	private static void lesson3HW() {
 			MyArrayStack<Integer> arrStack = new MyArrayStack<>();
 			arrStack.push(5);
