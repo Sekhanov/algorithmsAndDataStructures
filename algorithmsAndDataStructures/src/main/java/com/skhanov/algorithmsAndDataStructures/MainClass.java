@@ -10,16 +10,24 @@ public class MainClass {
 	}
 	
 	private static void lesson4HW() {
-		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
-		myLinkedList.insert(1);
-		myLinkedList.insert(2);
-		myLinkedList.insert(3);
-		myLinkedList.insert(4);
-		myLinkedList.insert(5);
-		System.out.println(myLinkedList);
-		myLinkedList.delete(4);
-		myLinkedList.delete(5);
-		System.out.println(myLinkedList);
+//		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+//		myLinkedList.insert(1);
+//		myLinkedList.insert(2);
+//		myLinkedList.insert(3);
+//		myLinkedList.insert(4);
+//		myLinkedList.insert(5);
+//		System.out.println(myLinkedList);
+//		myLinkedList.delete(4);
+//		myLinkedList.delete(5);
+//		System.out.println(myLinkedList);
+		
+		MyTwoLinkedList<Integer> myTwoLinkedList = new MyTwoLinkedList<>();
+		myTwoLinkedList.insertFirst(3);
+		myTwoLinkedList.insertFirst(4);
+		myTwoLinkedList.insertLast(1);
+		for (Integer integer : myTwoLinkedList) {
+			System.out.print(integer + " ");
+		}
 	}
 
 	private static void lesson3HW() {
