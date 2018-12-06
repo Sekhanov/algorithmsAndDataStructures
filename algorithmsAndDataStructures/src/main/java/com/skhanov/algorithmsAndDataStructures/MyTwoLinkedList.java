@@ -3,8 +3,6 @@ package com.skhanov.algorithmsAndDataStructures;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import org.omg.CORBA.Current;
-
 public class MyTwoLinkedList<E> implements Iterable<E> {
 
 	private class Node {
@@ -16,6 +14,18 @@ public class MyTwoLinkedList<E> implements Iterable<E> {
 			this.e = e;
 			this.previous = previous;
 			this.next = next;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if(this == obj) return true;
+			if(obj == null) return false;
+			if(!this.getClass().equals(obj.getClass())) {
+				return false;
+			}
+			@SuppressWarnings("unchecked")
+			Node node = (Node) obj;
+			return this.e.equals(node.e);
 		}
 	}
 	
@@ -81,14 +91,42 @@ public class MyTwoLinkedList<E> implements Iterable<E> {
 		return new MyTwoLinkedListIterator();
 	}
 	
-//	public E deleteFirst() {
-//		first.next.previous = null;
-//		r
-//		
-//	}
+	public E deleteFirst() {
+		E result = first.e;
+		first = first.next;
+		first.previous = null;
+		return result;		
+	}
 	
+	public E deleteLast() {
+		E result = last.e;
+		last = last.previous;
+		last.next = null;
+		return result;
+	}
 	
+	public boolean delete(E e) {
+		Node current = first;
+		while(current != null && !current.e.equals(e)) {
+			current = current.next;
+			if(current == null) return false;
+		}
+		current.previous.next = current.next;
+		current.next.previous = current.previous;
+		current.previous = null;
+		current.next = null;
+		size--;
+		
+		return true;
+	}
 	
+	public boolean find(E e) {
+		Node current = first;
+		while(current != null && !current.e.equals(e)) {
+			current = current.next;			
+		}
+		return current != null;
+		
+	}
 	
-
 }

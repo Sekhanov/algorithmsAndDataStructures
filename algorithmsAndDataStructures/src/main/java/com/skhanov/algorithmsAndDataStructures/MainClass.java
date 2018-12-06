@@ -27,7 +27,14 @@ public class MainClass {
 		myTwoLinkedList.insertLast(1);
 		for (Integer integer : myTwoLinkedList) {
 			System.out.print(integer + " ");
-		}
+		}	
+		System.out.println();
+		System.out.println(myTwoLinkedList.delete(3));
+		for (Integer integer : myTwoLinkedList) {
+			System.out.print(integer + " ");
+		}	
+
+		
 	}
 
 	private static void lesson3HW() {
