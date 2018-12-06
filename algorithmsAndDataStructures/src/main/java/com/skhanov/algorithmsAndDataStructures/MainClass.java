@@ -24,16 +24,26 @@ public class MainClass {
 		MyTwoLinkedList<Integer> myTwoLinkedList = new MyTwoLinkedList<>();
 		myTwoLinkedList.insertFirst(3);
 		myTwoLinkedList.insertFirst(4);
+		myTwoLinkedList.insertFirst(5);
+		myTwoLinkedList.insertFirst(6);
 		myTwoLinkedList.insertLast(1);
+		myTwoLinkedList.insertLast(2);
 		for (Integer integer : myTwoLinkedList) {
 			System.out.print(integer + " ");
 		}	
 		System.out.println();
+		System.out.println(myTwoLinkedList.get(2));
+		System.out.println(myTwoLinkedList.set(2, 555));
 		System.out.println(myTwoLinkedList.delete(3));
 		for (Integer integer : myTwoLinkedList) {
 			System.out.print(integer + " ");
-		}	
-
+		}
+		myTwoLinkedList.insert(3, 333);
+		System.out.println();
+		for (Integer integer : myTwoLinkedList) {
+			System.out.print(integer + " ");
+		}
+		
 		
 	}
 

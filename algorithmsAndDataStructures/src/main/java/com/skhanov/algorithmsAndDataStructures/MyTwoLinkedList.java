@@ -95,6 +95,7 @@ public class MyTwoLinkedList<E> implements Iterable<E> {
 		E result = first.e;
 		first = first.next;
 		first.previous = null;
+		size--;
 		return result;		
 	}
 	
@@ -102,6 +103,7 @@ public class MyTwoLinkedList<E> implements Iterable<E> {
 		E result = last.e;
 		last = last.previous;
 		last.next = null;
+		size--;
 		return result;
 	}
 	
@@ -125,8 +127,47 @@ public class MyTwoLinkedList<E> implements Iterable<E> {
 		while(current != null && !current.e.equals(e)) {
 			current = current.next;			
 		}
-		return current != null;
-		
+		return current != null;		
+	}
+	
+	public E get(int index) {
+		if(index < 0 || index > size - 1) throw new IndexOutOfBoundsException();
+		Node current = first;
+		for(int i = 0; i < index; i++) {
+			current = current.next;
+		}
+		return current.e;		
+	}
+	
+	public E set(int index, E e) {
+		if(index < 0 || index > size - 1) throw new IndexOutOfBoundsException();
+		Node current = first;
+		for(int i = 0; i < index; i++) {
+			current = current.next;
+		}
+		E result = current.e;
+		current.e = e;
+		return result;
+	}
+	
+	public void insert(int index, E e) {
+		if(index < 0 || index > size - 1) throw new IndexOutOfBoundsException();
+		if(index == 0) {
+			insertFirst(e);
+			return;
+		}
+		if(index == size - 1) {
+			insertLast(e);
+			return;
+		}
+		Node current = first;
+		for(int i = 0; i < index; i++) {
+			current = current.next;			
+		}
+		Node newNode = new Node(e, current.previous, current);
+		current.previous.next = newNode;
+		current.previous = newNode;
+		size++;
 	}
 	
 }
