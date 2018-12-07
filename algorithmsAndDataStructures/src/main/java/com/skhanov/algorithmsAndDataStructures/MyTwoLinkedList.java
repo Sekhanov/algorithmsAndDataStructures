@@ -122,7 +122,7 @@ public class MyTwoLinkedList<E> implements Iterable<E> {
 		return true;
 	}
 	
-	public boolean find(E e) {
+	public boolean isElement(E e) {
 		Node current = first;
 		while(current != null && !current.e.equals(e)) {
 			current = current.next;			

@@ -10,17 +10,20 @@ public class MainClass {
 	}
 	
 	private static void lesson4HW() {
-//		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
-//		myLinkedList.insert(1);
-//		myLinkedList.insert(2);
-//		myLinkedList.insert(3);
-//		myLinkedList.insert(4);
-//		myLinkedList.insert(5);
-//		System.out.println(myLinkedList);
-//		myLinkedList.delete(4);
-//		myLinkedList.delete(5);
-//		System.out.println(myLinkedList);
+		System.out.println("MyLinkedList");
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+		myLinkedList.insert(1);
+		myLinkedList.insert(2);
+		myLinkedList.insert(3);
+		myLinkedList.insert(4);
+		myLinkedList.insert(5);
+		System.out.println(myLinkedList);
+		myLinkedList.delete(4);
+		myLinkedList.delete(5);
+		System.out.println(myLinkedList);
 		
+		
+		System.out.println("MyTwoLinkedList");
 		MyTwoLinkedList<Integer> myTwoLinkedList = new MyTwoLinkedList<>();
 		myTwoLinkedList.insertFirst(3);
 		myTwoLinkedList.insertFirst(4);
@@ -28,22 +31,41 @@ public class MainClass {
 		myTwoLinkedList.insertFirst(6);
 		myTwoLinkedList.insertLast(1);
 		myTwoLinkedList.insertLast(2);
-		for (Integer integer : myTwoLinkedList) {
-			System.out.print(integer + " ");
-		}	
+		myTwoLinkedList.forEach(e -> System.out.print(e + " "));
 		System.out.println();
 		System.out.println(myTwoLinkedList.get(2));
 		System.out.println(myTwoLinkedList.set(2, 555));
 		System.out.println(myTwoLinkedList.delete(3));
-		for (Integer integer : myTwoLinkedList) {
-			System.out.print(integer + " ");
-		}
+		myTwoLinkedList.forEach(e -> System.out.print(e + " "));
 		myTwoLinkedList.insert(3, 333);
 		System.out.println();
-		for (Integer integer : myTwoLinkedList) {
-			System.out.print(integer + " ");
-		}
+		myTwoLinkedList.forEach(e -> System.out.print(e + " "));
 		
+		System.out.println("MyLinkedList");
+		MyLindekQueue<Integer> myLindekQueue = new MyLindekQueue<>();
+		myLindekQueue.enqueue(1);
+		myLindekQueue.enqueue(2);
+		myLindekQueue.enqueue(3);
+		myLindekQueue.enqueue(4);
+		myLindekQueue.forEach(e -> System.out.print(e + " "));
+		myLindekQueue.dequeue();
+		myLindekQueue.dequeue();
+		System.out.println();
+		myLindekQueue.forEach(e -> System.out.print(e + " "));
+		System.out.println();
+		
+		
+		System.out.println("myLindekStack");
+		MyLindekStack<Integer> myLindekStack = new MyLindekStack<>();
+		myLindekStack.push(1);
+		myLindekStack.push(2);
+		myLindekStack.push(3);
+		myLindekStack.push(4);
+		myLindekStack.forEach(e -> System.out.print(e + " "));
+		myLindekStack.pop();
+		myLindekStack.pop();
+		System.out.println();
+		myLindekStack.forEach(e -> System.out.print(e + " "));
 		
 	}
 
