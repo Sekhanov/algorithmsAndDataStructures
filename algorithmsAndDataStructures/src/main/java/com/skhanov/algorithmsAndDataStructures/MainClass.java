@@ -6,9 +6,19 @@ public class MainClass {
 
 //		lesson2HW();	
 //		lesson3HW();
-		lesson4HW();
+//		lesson4HW();
+		lesson5HW();
 	}
 	
+	private static void lesson5HW() {
+//		System.out.println(Utils.factorialRecursion(10));
+//		System.out.println(Utils.fibonacchiRecursion(10));
+//		System.out.println(Utils.powCicle(2, 10));
+//		System.out.println(Utils.powRecurson(2, 10));
+		Utils.hanoiRec(2, 'A', 'B', 'C');
+		
+	}
+
 	private static void lesson4HW() {
 		System.out.println("MyLinkedList");
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
