@@ -11,12 +11,9 @@ public class MainClass {
 	}
 	
 	private static void lesson5HW() {
-//		System.out.println(Utils.factorialRecursion(10));
-//		System.out.println(Utils.fibonacchiRecursion(10));
-//		System.out.println(Utils.powCicle(2, 10));
-//		System.out.println(Utils.powRecurson(2, 10));
-		Utils.hanoiRec(2, 'A', 'B', 'C');
-		
+		Utils.cicleCoundDown(10);		
+		Utils.recurCountDown(10);
+		Utils.hanoiRec(4, 'A', 'B', 'C');		
 	}
 
 	private static void lesson4HW() {

@@ -37,7 +37,7 @@ public class MyArrayList<E> {
 		if(size == list.length) {
 			resize(2 * list.length);
 		}
-		if(size == list.length / 4 && size > 0) {
+		if(size == list.length / 4 && size > INITIAL_CAPACITY) {
 			size = list.length / 2;
 			resize(list.length / 2);
 		}

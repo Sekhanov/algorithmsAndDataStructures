@@ -62,7 +62,17 @@ public class MySortedArray<E extends Comparable<E>> extends MyArrayList<E> {
 		return 0;
 	}
 	
-	
+	public boolean find(E e, int low, int high) {
+		if(low > high) return false;
+		int mid = low + (high - low) / 2;
+		if(e.compareTo(castE(list[mid])) == 0) {
+			return true;
+		} else if(e.compareTo(castE(list[mid])) > 0) {
+			return find(e, mid + 1, high);
+		} else {
+			return find(e, low, mid - 1);
+		}		
+	}
 
 
 }

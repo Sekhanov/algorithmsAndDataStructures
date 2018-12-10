@@ -31,6 +31,20 @@ public class AppTest {
 		assertTrue(2048 == Utils.powCicle(2, 11));
 	}
 	
+	@Test
+	public void recursionFindInList() {
+		MySortedArray<Integer> mySortedArray = new MySortedArray<>();
+		mySortedArray.add(4);
+		mySortedArray.add(3);
+		mySortedArray.add(7);
+		mySortedArray.add(5);
+		mySortedArray.add(12);
+		mySortedArray.insertionSort();
+		assertTrue(mySortedArray.find(3, 0, mySortedArray.size - 1));
+		
+		
+	}
+	
 
 }
 

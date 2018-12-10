@@ -83,4 +83,22 @@ public class Utils {
 		hanoiRec(n - 1, add, to, from);
 
 	}
+	
+	public static void recurCountDown(int i) {
+		System.out.print(i + " ");
+		if(i == 1) {
+			System.out.println();
+			return;
+		} else {
+			recurCountDown(i - 1);
+		}
+	}
+
+	public static void cicleCoundDown(int i) {
+		while(i > 0) {
+			System.out.print(i + " ");
+			i--;
+		}
+		System.out.println();
+	}
 }
