@@ -7,9 +7,19 @@ public class MainClass {
 //		lesson2HW();	
 //		lesson3HW();
 //		lesson4HW();
-		lesson5HW();
+//		lesson5HW();
+		lesson6HW();
 	}
 	
+	private static void lesson6HW() {
+		MyBinarySearchTree<Integer, String> myBinarySearchTree = new MyBinarySearchTree<>();
+		myBinarySearchTree.put(3, "qwer");
+		myBinarySearchTree.put(2, "wert");
+		myBinarySearchTree.put(4, "ZXC");
+		
+		System.out.println(myBinarySearchTree.get(4));
+	}
+
 	private static void lesson5HW() {
 		Utils.cicleCoundDown(10);		
 		Utils.recurCountDown(10);
