@@ -6,9 +6,16 @@ public class MainClass {
 
 //		lesson2HW();	
 //		lesson3HW();
-		lesson4HW();
+//		lesson4HW();
+		lesson5HW();
 	}
 	
+	private static void lesson5HW() {
+		Utils.cicleCoundDown(10);		
+		Utils.recurCountDown(10);
+		Utils.hanoiRec(4, 'A', 'B', 'C');		
+	}
+
 	private static void lesson4HW() {
 		System.out.println("MyLinkedList");
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
