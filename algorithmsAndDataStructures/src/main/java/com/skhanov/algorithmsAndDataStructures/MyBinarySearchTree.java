@@ -94,17 +94,17 @@ public class MyBinarySearchTree<K extends Comparable<K>, V> {
 			throw new IllegalArgumentException("Ключ не может принимать значение null");
 		}
 		if (node == null) {
-			return new Node(k, v, 1, 0);
+			return new Node(k, v, 1, 1);
 		}
 		int comparable = k.compareTo(node.k);
 		if (comparable == 0) {
 			node.v = v;
 		} else if (comparable < 0) {
 			node.left = put(node.left, k, v);
-			node.height = node.left.height + 1;
+			node.height = height(node.left) + 1;
 		} else if (comparable > 0) {
 			node.right = put(node.right, k, v);
-			node.height = node.right.height + 1;
+			node.height = height(node.right) + 1;
 		}
 		node.size = size(node.left) + size(node.right) + 1;
 		return node;
@@ -139,7 +139,7 @@ public class MyBinarySearchTree<K extends Comparable<K>, V> {
 	}
 
 	public void deleteMax() {
-		root = deleteMax(root);
+		root = deleteMax(root);		
 	}
 
 	private Node deleteMax(Node node) {
@@ -161,8 +161,10 @@ public class MyBinarySearchTree<K extends Comparable<K>, V> {
 		int compare = k.compareTo(node.k);
 		if (compare > 0) {
 			node.right = delete(node.right, k);
+			node.height = height(node.left) > height(node.right) ? height(node.left) + 1 : height(node.right) + 1;
 		} else if (compare < 0) {
 			node.left = delete(node.left, k);
+			node.height = height(node.left) > height(node.right) ? height(node.left) + 1 : height(node.right) + 1;
 		} else if (compare == 0) {
 			if (node.left == null) {
 				return node.right;
@@ -174,6 +176,7 @@ public class MyBinarySearchTree<K extends Comparable<K>, V> {
 			node = max(node.left);
 			node.left = deleteMax(tempNode.left);
 			node.right = tempNode.right;
+			node.height = height(node.left) > height(node.right) ? height(node.left) + 1 : height(node.right) + 1;
 			tempNode = null;
 		}
 		node.size = size(node.left) + size(node.right) + 1;

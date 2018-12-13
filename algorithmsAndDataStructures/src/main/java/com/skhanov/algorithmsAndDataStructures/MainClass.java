@@ -13,7 +13,7 @@ public class MainClass {
 		lesson6HW();
 	}
 	
-	private static void lesson6HW() {		
+	private static void lesson6HW() {	
 		ArrayList<MyBinarySearchTree<Integer, Integer>> myBinarySearchTrees = new ArrayList<>();
 		for(int i = 0; i < 20; i++) {
 			myBinarySearchTrees.add(Utils.fillBinarySearchTree(10000, 6));

@@ -50,11 +50,21 @@ public class AppTest {
 		myBinarySearchTree.put(2, "2");
 		myBinarySearchTree.put(4, "4");	
 		myBinarySearchTree.put(5, "5");	
-		assertTrue(myBinarySearchTree.height() == 3);
+		assertTrue(myBinarySearchTree.height() == 4);
 		assertFalse(myBinarySearchTree.isBalanced());
+		myBinarySearchTree.delete(1);
 		myBinarySearchTree.delete(5);
-		myBinarySearchTree.delete(4);
-		//TODO сокращение высоты при удалении
+		assertTrue(myBinarySearchTree.isBalanced());		
+		
+		MyBinarySearchTree<Integer, String> myBinarySearchTree2 = new MyBinarySearchTree<>();
+		myBinarySearchTree2.put(3, "3");
+		myBinarySearchTree2.put(1, "1");
+		myBinarySearchTree2.put(4, "4");	
+		myBinarySearchTree2.put(5, "5");	
+		myBinarySearchTree2.put(2, "2");
+		myBinarySearchTree2.delete(1);
+		myBinarySearchTree2.delete(5);
+		assertTrue(myBinarySearchTree2.height() == 2);
 	}
 	
 
