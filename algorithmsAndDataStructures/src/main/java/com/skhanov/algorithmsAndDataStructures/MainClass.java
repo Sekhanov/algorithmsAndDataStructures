@@ -1,5 +1,7 @@
 package com.skhanov.algorithmsAndDataStructures;
 
+import java.util.ArrayList;
+
 public class MainClass {
 	
 	public static void main(String[] args) {
@@ -11,13 +13,19 @@ public class MainClass {
 		lesson6HW();
 	}
 	
-	private static void lesson6HW() {
-		MyBinarySearchTree<Integer, String> myBinarySearchTree = new MyBinarySearchTree<>();
-		myBinarySearchTree.put(3, "qwer");
-		myBinarySearchTree.put(2, "wert");
-		myBinarySearchTree.put(4, "ZXC");
-		
-		System.out.println(myBinarySearchTree.get(4));
+	private static void lesson6HW() {		
+		ArrayList<MyBinarySearchTree<Integer, Integer>> myBinarySearchTrees = new ArrayList<>();
+		for(int i = 0; i < 20; i++) {
+			myBinarySearchTrees.add(Utils.fillBinarySearchTree(10000, 6));
+		}
+		int balaceTreesCount = 0;
+		for (MyBinarySearchTree<Integer, Integer> myBinarySearchTree : myBinarySearchTrees) {
+			if(myBinarySearchTree.isBalanced()) {
+				balaceTreesCount++;
+			}
+		}
+		System.out.println("Из 20 построенных деревьев " +  balaceTreesCount + " сбалансированны");
+				
 	}
 
 	private static void lesson5HW() {
