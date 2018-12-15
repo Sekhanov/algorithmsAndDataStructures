@@ -101,4 +101,20 @@ public class Utils {
 		}
 		System.out.println();
 	}
+	
+	public static MyBinarySearchTree<Integer, Integer> fillBinarySearchTree(int elementCont, int height) {
+		MyBinarySearchTree<Integer, Integer> myBinarySearchTree = new MyBinarySearchTree<>();
+		for(int i = 1; i < elementCont; i++) {
+			myBinarySearchTree.put(randomInt(), randomInt());
+			if(myBinarySearchTree.height() > 6) {
+				return myBinarySearchTree;
+			}
+		}
+		return myBinarySearchTree;
+		
+	}
+
+	private static int randomInt() {		
+		return (int) (Math.random() * 200 - 100);
+	}
 }

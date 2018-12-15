@@ -40,9 +40,31 @@ public class AppTest {
 		mySortedArray.add(5);
 		mySortedArray.add(12);
 		mySortedArray.insertionSort();
-		assertTrue(mySortedArray.find(3, 0, mySortedArray.size - 1));
+		assertTrue(mySortedArray.find(3, 0, mySortedArray.size - 1));		
+	}
+	
+	@Test
+	public void BynarySearchTree() {
+		MyBinarySearchTree<Integer, String> myBinarySearchTree = new MyBinarySearchTree<>();
+		myBinarySearchTree.put(1, "1");
+		myBinarySearchTree.put(2, "2");
+		myBinarySearchTree.put(4, "4");	
+		myBinarySearchTree.put(5, "5");	
+		assertTrue(myBinarySearchTree.height() == 4);
+		assertFalse(myBinarySearchTree.isBalanced());
+		myBinarySearchTree.delete(1);
+		myBinarySearchTree.delete(5);
+		assertTrue(myBinarySearchTree.isBalanced());		
 		
-		
+		MyBinarySearchTree<Integer, String> myBinarySearchTree2 = new MyBinarySearchTree<>();
+		myBinarySearchTree2.put(3, "3");
+		myBinarySearchTree2.put(1, "1");
+		myBinarySearchTree2.put(4, "4");	
+		myBinarySearchTree2.put(5, "5");	
+		myBinarySearchTree2.put(2, "2");
+		myBinarySearchTree2.delete(1);
+		myBinarySearchTree2.delete(5);
+		assertTrue(myBinarySearchTree2.height() == 2);
 	}
 	
 
