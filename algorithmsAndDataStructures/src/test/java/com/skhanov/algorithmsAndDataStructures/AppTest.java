@@ -83,6 +83,11 @@ public class AppTest {
 		DepthFirstPath depthFirstPath = new DepthFirstPath(graph, 0);
 		assertTrue(depthFirstPath.hasPathTo(5));
 		assertFalse(depthFirstPath.hasPathTo(6));	
+		BreadthFirstPaths breadthFirstPaths = new BreadthFirstPaths(graph, 0);
+		assertTrue(breadthFirstPaths.hasPathTo(5));
+		assertFalse(breadthFirstPaths.hasPathTo(6));
+		assertEquals(3, breadthFirstPaths.distTo(5));
+		assertEquals(1, breadthFirstPaths.distTo(3));
 		
 	}
 	
