@@ -12,8 +12,8 @@ public class Graph {
 	public Graph(int vertexCount) {
 		this.vertexCount = vertexCount;
 		adjLists = new LinkedList[vertexCount];
-		for (LinkedList<Integer> linkedList : adjLists) {
-			linkedList = new LinkedList<>();
+		for(int i = 0; i < vertexCount; i++) {
+			adjLists[i] = new LinkedList<Integer>();
 		}
 	}
 	

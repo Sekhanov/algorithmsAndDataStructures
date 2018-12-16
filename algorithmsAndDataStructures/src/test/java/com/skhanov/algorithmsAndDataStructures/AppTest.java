@@ -44,7 +44,7 @@ public class AppTest {
 	}
 	
 	@Test
-	public void BynarySearchTree() {
+	public void bynarySearchTree() {
 		MyBinarySearchTree<Integer, String> myBinarySearchTree = new MyBinarySearchTree<>();
 		myBinarySearchTree.put(1, "1");
 		myBinarySearchTree.put(2, "2");
@@ -65,6 +65,25 @@ public class AppTest {
 		myBinarySearchTree2.delete(1);
 		myBinarySearchTree2.delete(5);
 		assertTrue(myBinarySearchTree2.height() == 2);
+	}
+	
+	
+//	0 --- 1 ---- 2    6
+//	|			 |	
+//	3---- 4 ---- 5	
+	@Test
+	public void graphDfs() {
+		Graph graph = new Graph(7);
+		graph.addEdge(0, 1);
+		graph.addEdge(0, 3);
+		graph.addEdge(1, 2);
+		graph.addEdge(2, 5);
+		graph.addEdge(5, 4);
+		graph.addEdge(4, 3);		
+		DepthFirstPath depthFirstPath = new DepthFirstPath(graph, 0);
+		assertTrue(depthFirstPath.hasPathTo(5));
+		assertFalse(depthFirstPath.hasPathTo(6));	
+		
 	}
 	
 
