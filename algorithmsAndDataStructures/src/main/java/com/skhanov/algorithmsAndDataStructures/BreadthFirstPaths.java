@@ -57,7 +57,7 @@ public class BreadthFirstPaths {
 		return result;
 	}
 	
-	public int distTo(int dist) {
+	public int distTo(int dist) {		
 		return pathTo[dist];
 	}
 	

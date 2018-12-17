@@ -69,7 +69,7 @@ public class AppTest {
 	
 	
 //	0 --- 1 ---- 2    6
-//	|			 |	
+//	|            |	
 //	3---- 4 ---- 5	
 	@Test
 	public void graphDfs() {
@@ -79,7 +79,7 @@ public class AppTest {
 		graph.addEdge(1, 2);
 		graph.addEdge(2, 5);
 		graph.addEdge(5, 4);
-		graph.addEdge(4, 3);		
+		graph.addEdge(4, 3);
 		DepthFirstPath depthFirstPath = new DepthFirstPath(graph, 0);
 		assertTrue(depthFirstPath.hasPathTo(5));
 		assertFalse(depthFirstPath.hasPathTo(6));	

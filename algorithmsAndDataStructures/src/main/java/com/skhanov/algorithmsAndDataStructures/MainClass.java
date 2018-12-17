@@ -10,9 +10,32 @@ public class MainClass {
 //		lesson3HW();
 //		lesson4HW();
 //		lesson5HW();
-		lesson6HW();
+//		lesson6HW();
+		lesson7HW();
 	}
 	
+//	1 -- 2 -- 4    9 -- 8
+//  |    |    |
+//	5 -- 3 -- 0 -- 7 
+	private static void lesson7HW() {
+		Graph graph = new Graph(10);
+		graph.addEdge(1, 2);
+		graph.addEdge(1, 5);
+		graph.addEdge(2, 4);
+		graph.addEdge(2, 3);
+		graph.addEdge(4, 0);
+		graph.addEdge(0, 7);
+		graph.addEdge(0, 3);
+		graph.addEdge(3, 5);
+		graph.addEdge(9, 8);
+		System.out.println(graph.getAdjList(0));
+		System.out.println(graph.getAdjList(8));
+		BreadthFirstPaths breadthFirstPaths = new BreadthFirstPaths(graph, 1);
+		System.out.println(breadthFirstPaths.distTo(7));
+		System.out.println(breadthFirstPaths.distTo(9));
+		
+	}
+
 	private static void lesson6HW() {	
 		ArrayList<MyBinarySearchTree<Integer, Integer>> myBinarySearchTrees = new ArrayList<>();
 		for(int i = 0; i < 20; i++) {
