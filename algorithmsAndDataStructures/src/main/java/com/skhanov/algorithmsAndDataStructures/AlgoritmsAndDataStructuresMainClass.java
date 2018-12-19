@@ -26,11 +26,8 @@ private static void lesson8HW() {
 		System.out.println();
 		LinearProbingHashTable<String, String> linearProbingHashTable = new LinearProbingHashTable<>();
 		linearProbingHashTable.put("qwer", "qwerqwerqwer");
-		linearProbingHashTable.put("asdf", "asdfasdfasdf");
-		linearProbingHashTable.put("zxcv", "zxcvzxcvzxcv");
-		linearProbingHashTable.get("qwer");
-		linearProbingHashTable.get("asdf");
-		linearProbingHashTable.get("zxcv");
+		System.out.println(linearProbingHashTable.get("qwer"));
+
 		
 	}
 

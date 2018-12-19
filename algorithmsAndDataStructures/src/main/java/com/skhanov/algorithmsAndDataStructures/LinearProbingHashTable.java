@@ -43,7 +43,7 @@ public class LinearProbingHashTable<K, V> {
 			throw new IllegalArgumentException("Ключ не может иметь знаение null");
 		}
 		int i;
-		for(i = hash(k); k != null; i = (i + 1) / INITIAL_CAPACITY) {
+		for(i = hash(k); keys[i] != null; i = (i + 1) / INITIAL_CAPACITY) {
 			if(((K) keys[i]).equals(k)) {
 				values[i] = values;
 				return;
