@@ -2,7 +2,7 @@ package com.skhanov.algorithmsAndDataStructures;
 
 import java.util.ArrayList;
 
-public class MainClass {
+public class AlgoritmsAndDataStructuresMainClass {
 	
 	public static void main(String[] args) {
 
@@ -11,10 +11,30 @@ public class MainClass {
 //		lesson4HW();
 //		lesson5HW();
 //		lesson6HW();
-		lesson7HW();
+//		lesson7HW();
+		lesson8HW();
 	}
 	
-//	1 -- 2 -- 4    9 -- 8
+private static void lesson8HW() {
+		ChainingHashTable<String, String> chainingHashTable = new ChainingHashTable<>();
+		chainingHashTable.put("qwer", "qwerqwerqwer");
+		chainingHashTable.put("asdf", "asdfasdfasdf");
+		chainingHashTable.put("zxcv", "zxcvzxcvzxcv");
+		System.out.println(chainingHashTable.get("qwer"));
+		System.out.println(chainingHashTable.get("asdf"));
+		System.out.println(chainingHashTable.get("zxcv"));
+		System.out.println();
+		LinearProbingHashTable<String, String> linearProbingHashTable = new LinearProbingHashTable<>();
+		linearProbingHashTable.put("qwer", "qwerqwerqwer");
+		linearProbingHashTable.put("asdf", "asdfasdfasdf");
+		linearProbingHashTable.put("zxcv", "zxcvzxcvzxcv");
+		linearProbingHashTable.get("qwer");
+		linearProbingHashTable.get("asdf");
+		linearProbingHashTable.get("zxcv");
+		
+	}
+
+	//	1 -- 2 -- 4    9 -- 8
 //  |    |    |
 //	5 -- 3 -- 0 -- 7 
 	private static void lesson7HW() {
