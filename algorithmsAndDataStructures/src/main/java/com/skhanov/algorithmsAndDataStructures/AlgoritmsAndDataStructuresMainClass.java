@@ -17,17 +17,21 @@ public class AlgoritmsAndDataStructuresMainClass {
 	
 private static void lesson8HW() {
 		ChainingHashTable<String, String> chainingHashTable = new ChainingHashTable<>();
-		chainingHashTable.put("qwer", "qwerqwerqwer");
-		chainingHashTable.put("asdf", "asdfasdfasdf");
-		chainingHashTable.put("zxcv", "zxcvzxcvzxcv");
-		System.out.println(chainingHashTable.get("qwer"));
-		System.out.println(chainingHashTable.get("asdf"));
-		System.out.println(chainingHashTable.get("zxcv"));
+		chainingHashTable.put("1", "один");
+		chainingHashTable.put("2", "два");
+		chainingHashTable.put("3", "три");
+		System.out.println(chainingHashTable.get("1"));
+		System.out.println(chainingHashTable.get("2"));
+		chainingHashTable.delete("3");
+		System.out.println(chainingHashTable.get("3"));
 		System.out.println();
 		LinearProbingHashTable<String, String> linearProbingHashTable = new LinearProbingHashTable<>();
-		linearProbingHashTable.put("qwer", "qwerqwerqwer");
-		System.out.println(linearProbingHashTable.get("qwer"));
-
+		linearProbingHashTable.put("1", "один");
+		linearProbingHashTable.put("2", "два");
+		linearProbingHashTable.put("3", "три");
+		System.out.println(linearProbingHashTable.get("1"));
+		System.out.println(linearProbingHashTable.get("2"));
+		System.out.println(linearProbingHashTable.get("3"));
 		
 	}
 

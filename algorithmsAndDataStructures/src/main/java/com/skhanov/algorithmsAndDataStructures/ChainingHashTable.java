@@ -11,6 +11,7 @@ public class ChainingHashTable<K, V> {
 		private V v;
 		private Node next;
 		
+		
 		public Node(K k, V v, Node next) {
 			this.k = k;
 			this.v = v;
@@ -52,6 +53,8 @@ public class ChainingHashTable<K, V> {
 		return get(k) != null;
 	}
 	
+
+	
 	public void put(K k, V v) {
 		if(k == null) {
 			throw new IllegalArgumentException("Значение ключа не может быть null");			
@@ -68,6 +71,25 @@ public class ChainingHashTable<K, V> {
 		}
 		keyHashTable[i] = new Node(k, v, node);
 		size++;
-	}
+	}	
 	
+	public V delete(K k) {
+		if(k == null) {
+			throw new IllegalArgumentException("Значение ключа не может быть null");
+		}
+		int i = hash(k);
+		@SuppressWarnings("unchecked")
+		Node node = (Node) keyHashTable[i];
+		if(node != null) {
+			if(node.k.equals(k)) {
+				node = node.next;
+				
+			}
+		}
+		return null;
+		
+		
+	}
+
+
 }
