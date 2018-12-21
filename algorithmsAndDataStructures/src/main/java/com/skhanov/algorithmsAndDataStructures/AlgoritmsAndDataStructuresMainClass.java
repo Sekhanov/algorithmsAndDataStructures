@@ -2,7 +2,7 @@ package com.skhanov.algorithmsAndDataStructures;
 
 import java.util.ArrayList;
 
-public class MainClass {
+public class AlgoritmsAndDataStructuresMainClass {
 	
 	public static void main(String[] args) {
 
@@ -11,10 +11,31 @@ public class MainClass {
 //		lesson4HW();
 //		lesson5HW();
 //		lesson6HW();
-		lesson7HW();
+//		lesson7HW();
+		lesson8HW();
 	}
 	
-//	1 -- 2 -- 4    9 -- 8
+private static void lesson8HW() {
+		ChainingHashTable<String, String> chainingHashTable = new ChainingHashTable<>();
+		chainingHashTable.put("1", "один");
+		chainingHashTable.put("2", "два");
+		chainingHashTable.put("3", "три");
+		System.out.println(chainingHashTable.get("1"));
+		System.out.println(chainingHashTable.get("2"));
+		chainingHashTable.delete("3");
+		System.out.println(chainingHashTable.get("3"));
+		System.out.println();
+		LinearProbingHashTable<String, String> linearProbingHashTable = new LinearProbingHashTable<>();
+		linearProbingHashTable.put("1", "один");
+		linearProbingHashTable.put("2", "два");
+		linearProbingHashTable.put("3", "три");
+		System.out.println(linearProbingHashTable.get("1"));
+		System.out.println(linearProbingHashTable.get("2"));
+		System.out.println(linearProbingHashTable.get("3"));
+		
+	}
+
+	//	1 -- 2 -- 4    9 -- 8
 //  |    |    |
 //	5 -- 3 -- 0 -- 7 
 	private static void lesson7HW() {

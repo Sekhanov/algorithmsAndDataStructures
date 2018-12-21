@@ -117,4 +117,23 @@ public class Utils {
 	private static int randomInt() {		
 		return (int) (Math.random() * 200 - 100);
 	}
+	
+	public static int nextPrime(int i) {
+		i = i + 1;
+		while(i <= Integer.MAX_VALUE) {
+			if(isPrime(i)) return i;
+			i++;
+		}
+		return 0;
+	}
+	
+	public static boolean isPrime(int i) {
+		if(i== 1) return false;
+		for(int j = 2; j * j <= i; j++) {
+			if(i % j == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
