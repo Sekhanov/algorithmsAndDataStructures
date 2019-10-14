@@ -1,17 +1,24 @@
 package com.skhanov.algorithmsAndDataStructures;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.TreeSet;
 
 public class MainClass {
 	
 	public static void main(String[] args) {
-
-//		lesson2HW();	
+		// lesson2HW();	
+		MyLinkedListHashTable<String, String> myLinkedListHashTable = new MyLinkedListHashTable<>();
+		myLinkedListHashTable.put("Aa", "one");
+		myLinkedListHashTable.put("BB", "two");
+		myLinkedListHashTable.put("3", "three");
+		System.out.println(myLinkedListHashTable.get("BB"));
+		
 //		lesson3HW();
 //		lesson4HW();
 //		lesson5HW();
 //		lesson6HW();
-		lesson7HW();
+		// lesson7HW();
 	}
 	
 //	1 -- 2 -- 4    9 -- 8
