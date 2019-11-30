@@ -1,24 +1,36 @@
 package com.skhanov.algorithmsAndDataStructures;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.TreeSet;
+import java.util.Arrays;
 
 public class MainClass {
 	
 	public static void main(String[] args) {
 		// lesson2HW();	
-		MyLinkedListHashTable<String, String> myLinkedListHashTable = new MyLinkedListHashTable<>();
-		myLinkedListHashTable.put("Aa", "one");
-		myLinkedListHashTable.put("BB", "two");
-		myLinkedListHashTable.put("3", "three");
-		System.out.println(myLinkedListHashTable.get("BB"));
-		
+		// lesson8();
+		sorting();
+
 //		lesson3HW();
 //		lesson4HW();
 //		lesson5HW();
 //		lesson6HW();
 		// lesson7HW();
+
+
+	}
+
+	private static void sorting() {
+		int[] arr = {3, 5, 7, 12, 4, 6, 67, 1};
+		SortingAlgorithms.mergeSort(arr);
+		System.out.println(Arrays.toString(arr));
+	}
+
+	private static void lesson8() {
+		MyLinkedListHashTable<String, String> myLinkedListHashTable = new MyLinkedListHashTable<>();
+		myLinkedListHashTable.put("Aa", "one");
+		myLinkedListHashTable.put("BB", "two");
+		myLinkedListHashTable.put("3", "three");
+		System.out.println(myLinkedListHashTable.get("BB"));
 	}
 	
 //	1 -- 2 -- 4    9 -- 8
